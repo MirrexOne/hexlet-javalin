@@ -27,6 +27,20 @@ public class HelloWorld {
             }
         });
 
+        app.get("/courses/{id}", context -> {
+           context.result("Course ID: " + context.pathParam("id"));
+        });
+
+        app.get("/users/{id}", context -> {
+           context.result("User ID: " + context.pathParam("id"));
+        });
+
+        app.get("/courses/{courseId}/lessons/{id}", context -> {
+            String courseId = context.pathParam("courseId");
+            String lessonId = context.pathParam("id");
+            context.result("Course ID: " + courseId + " Lesson ID: " + lessonId);
+        });
+
         app.start(7070);
     }
 }
