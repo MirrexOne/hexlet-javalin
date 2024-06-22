@@ -35,10 +35,10 @@ public class HelloWorld {
            context.result("User ID: " + context.pathParam("id"));
         });
 
-        app.get("/courses/{courseId}/lessons/{id}", context -> {
-            String courseId = context.pathParam("courseId");
-            String lessonId = context.pathParam("id");
-            context.result("Course ID: " + courseId + " Lesson ID: " + lessonId);
+        app.get("/users/{id}/post/{postId}", context -> {
+            String userId = context.pathParam("id");
+            String postId = context.pathParam("postId");
+            context.result("User ID: " + userId + " Post ID: " + postId);
         });
 
         app.start(7070);
